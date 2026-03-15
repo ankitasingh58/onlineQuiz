@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<title>Developers</title>
+<meta name="viewport" content="width=device-width" intial-scale="1.0"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+#dv1{
+height:43%;
+width:68%;
+border:1px solid black;
+margin-top:8px;
+margin-left:40px;
+border-radius:10px;
+
+}
+#dv2{
+height:43%;
+width:150%;
+border:1px solid black;
+margin-top:8px;
+margin-left:40px;
+border-radius:10px;
+
+}
+#para{
+font-size:18px;
+font-family:elephant;
+text-align:center;
+padding:5%;
+}
+
+img{
+height:150px;
+width:150px;
+margin:10px 0px 0px 7px;
+border-radius: 50%;
+}
+
+</style>
+<script>
+   $(document).ready(function(){
+   $(".img_hov").hover(function(){
+    $(this).animate({"height":"180px","width":"180px"});
+   }, function(){$(this).animate({"height":"150px","width":"150px"})
+   });
+  }); 
+</script>
+</head>
+<body id="bd">
+<div class="container" >
+   <span style="font-size:38px;font-family:elephant;"><center> Developers<center></span>
+<div class="row" >
+<div  class="col-sm-4">
+    <div id="dv1">
+        <img src="images/prince.jpg" class="img_hov"/>
+        <p id="para">Prince Singh <br>From:- Sadguru Institute of CS</p>
+        </div>
+</div>
+<div class="col-sm-4" id="dv">
+<div id="dv1">
+<img src="images/anurag2.jpg" class="img_hov"/>
+<p id="para">Anurag Kesharwavi <br>From:- Sadguru Institute of CS </p>
+</div>
+</div>
+<div  class="col-sm-4">
+    <div id="dv1">
+        <img src="images/arun.jpg" class="img_hov"/>
+        <p id="para">Arun Kumar <br>From:- Goverment Polytechnic Pratapgarh</p>
+        </div>
+</div>
+<div class="row" >
+    <div  class="col-sm-2"></div>
+    <div  class="col-sm-2" id="im">
+        <div id="dv2">
+            <img src="images/pratima.jpeg" class="img_hov"/>
+            <p id="para">Pratima Kumari <br>From:- Government Girls Polytechnic Amethi </p>
+            </div>
+    </div>
+    <div  class="col-sm-2"></div>
+    <div  class="col-sm-2">
+        <div id="dv2">
+            <img src="images/ankitaSingh.jpg" class="img_hov"/>
+            <p id="para">Ankita Singh  <br>From:- Government Girls Polytechnic Amethi </p>
+            </div>
+            <div  class="col-sm-2"></div>
+            <div  class="col-sm-2"></div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
