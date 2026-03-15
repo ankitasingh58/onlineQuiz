@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam</title>
+	<link rel="icon" href="content/images/indianlogo.jpeg"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+ crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+ crossorigin="anonymous"></script>
+ <script src="https://use.fontawesome.com/da0ac05a31.js">
+ </script>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="jquery-3.6.1.min.js"></script> 
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#start").hover(function(){
+      $(this).css("background","green");
+      $(this).css("font-size","23px");
+      $(this).css("border","none");
+      $(this).css("box-shadow","4px 4px 4px 4px gray");
+    });
+  });
+ </script> 
+ <script src="scriptFile.js"></script>
+  <script>        
+  //define your time in second
+  $(document).ready(function(){
+    $("#start").click(function(){
+
+    var c=1199;
+        var t;
+        timedCount();
+        function timedCount()
+        {
+          var minutes = parseInt( c / 60 ) % 60;
+          var seconds = c % 60;
+          var result = (minutes < 60 ?  minutes : minutes) + ":" + (seconds  < 10 ? seconds : seconds);
+          $('#time').html(result);
+            if(c == 0 )
+             {
+            $('#quiz').remove();
+            $('#next').remove();
+            $('#time').remove();
+            $('#dev').show();
+            $('#res').show();
+            $('#score').text("You have completed the quiz,your score is " + score);//score*(100/i)
+            $('#results').fadeIn('fast');
+             }
+            c = c - 1;
+            t = setTimeout(function()
+               {
+                timedCount()},1000);
+              }   
+    })
+  })   
+
+             
+  </script>
+<style>
+  #start
+    {
+      background-color: blue; 
+      box-shadow: 4px 4px 4px 4px black;
+      padding-top: 5px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      width: 15%;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 10px;
+            border:none;
+    }
+ 
+
+#wrapper {
+    position: relative;
+}
+
+.choices {
+    display:none;
+}
+#questions {
+    font-size: 150%;
+    height: 70px;
+}
+.pickone {
+    display: inline;
+    position: relative;
+}
+#results {
+    display: none;
+    border: 1px solid black;
+    text-align: center;
+    height: 400px;
+    width: 450px;
+}
+td {
+    border: 1px solid black;
+}
+th {
+    border: 1px solid black;
+}
+#score {
+    font-size:34px;
+    height: 70px;
+}
+
+.heading {
+  color:#0000FF;
+  margin-top:4px;
+  font-size:35px;
+  font-weight: bold;
+}
+hr {
+  border-top: 2px solid #0000FF;
+  width:68%;
+  margin-bottom:18px;
+}
+.main {
+  width: 55vw;
+  margin: auto;
+  margin-bottom: 8px;
+  margin-top:1px;
+  padding:28px;
+  border-radius: 7px;
+  background-color: rgba(0,0,0, 0.8);
+  color:white;
+    background-image: url('images/dev.jfif');
+}
+label {
+  font-size: 25px;
+}
+.glow{
+  transform: translate(0%,0%);
+  animation:color 1s infinite;
+  font-size:30px;
+  margin-top:2px;
+}
+@keyframes color{
+  10% {color:black;}
+  25% {color:red;}
+  50% {color:blue;}
+  100% {color:green;}
+}
+
+</style>
+</head>
+<body style="background-color:#E8E8E8">
+ <div class="container-fluid">
+ 	<div  class="row" style="">
+    <div class="col-sm-12 btn btn-success">
+
+
+        <div class="row" style="margin:0px; padding:0px;">
+           <div  class="col-sm-2">
+              
+           </div>
+           <div  class="col-sm-8"><h3 class="panel-heading panel-primary" style="margin-top:2px;">Kamadgiri Software Solutions</h3>
+              <h4><u>Online Exam</u></h4>
+           </div>
+           <div class="col-sm-2 btn btn-warning" style="text-align:center; font-size:30px; margin-top:18px;" id="time">
+           </div>
+           <div id="dev">
+           <span style="font-weight: bold">Developer page</span>&emsp;
+           <a href="developer.html"><img src="images/logoA.png"></a>
+           </div>
+          
+        </div>
+    </div>
+    </div>
+    <div class="row" style="min-height:30px;">
+      <div class="col-sm-2"></div>
+       <div class="col-sm-8"  style="margin-top :30px; padding:0px;">      
+         <h3 style="color: blue; font-size:35px;text-align: center;">Basic Questions of programming Language</h3>
+         <br>
+         <center> <div id="start" style="margin-top: 10px;">Start</div></center>
+       </div>
+       <div class="col-sm-2"></div>
+     </div>
+     <div class="row" id="quiz" style="height:270px; margin-top:10px;">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8"  style="margin-top :10px; padding:0px;">   
+              
+            <h5 class="card-text" id="questions" style="font-size:30px;">
+            </h5>
+             <div name="answersFrame" id="answersFrame" class="choices" style="font-size:23px;">
+                <input type="radio" name="answers" class="choices" value=0>
+                <p id="zero" class="pickone"></p>
+                <br/>
+                <input type="radio" name="answers" class="choices" value=1>
+                <p id="one" class="pickone"></p>
+                <br/>
+                <input type="radio" name="answers" class="choices" value=2>
+                <p id="two" class="pickone"></p>
+                <br/>
+                <input type="radio" name="answers" class="choices" value=3>
+                <p id="three" class="pickone"></p>
+            </div>
+          </div> 
+           <div class="col-sm-2"></div>
+         </div>      
+          
+         <!-- <div class="col-sm-7 p-4" id="answersFrame" class="choices" style="margin-left:60px;">
+              <button class="btn btn-block btn-outline-success text-left" type="radio" id="zero" name="answers" class="choices" value=0></button>
+              <button class="btn btn-block btn-outline-success text-left"  type="radio" id="one" name="answers" class="choices" value=1></button>
+              <button class="btn btn-block btn-outline-success text-left" type="radio" id="two" name="answers" class="choices" value=2></button>
+              <button class="btn btn-block btn-outline-success text-left" type="radio" id="three" name="answers" class="choices" value=3></button>
+          </div>-->
+   <div id="res"> 
+     <div id="table">
+            <div class="row">
+                  <div class="col-sm-4"></div>
+                      <div class="col-sm-4">
+                       <center><h1 class="heading">RESULT</h1><hr></center>
+                   </div>
+                  <div class="col-sm-2"></div>      
+             </div> 
+             <div class="row" style="min-height:20px;">
+         <div class="col-sm-12"><h4 class="glow" style="text-align: center;">Thankyou for given a Quiz</h4></div>
+     </div>
+    <div class="main">
+         
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"> 
+            <span class="input-group-text" style="text-align:center;width:580px; height:111px; font-size:28px; color:black;" id="score">Total Marks : 20 <br><br>                     
+              </span>
+              <br>
+
+            </div>
+            
+          </div>
+        
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    
+    </div>           
+        </div>
+
+</div>
+
+
+    <div class="row" style="margin:0px; padding:0px;">
+       <div class="col-sm-12 text-center form-group" style="margin-top:16px;">
+       
+        <button id="next" type="submit" style="height: 40px; width:120px; background: green; color:white;">Next</button>
+      <!-- <button id="finish" type="submit" style="height: 40px; width:120px; background:blue; color:white;"><a href="result.html" style="text-decoration: none; color:white">Finish</a></button>-->
+       </div>
+
+    </div>
+      
+    <div class="row" style="margin-top:40px;">
+        <div class="col-sm-6" style="text-align:center;color:white; font-size:18px;padding-top:3px;background:green; min-height:35px;">KSS Chitrakoot</div>
+         <div class="col-sm-6" style="text-align:center;color:white; font-size:18px;padding-top:3px; background:green; min-height:35px;">Developed By : Our Team</div>
+    </div>
+ </div>
+</body>
+</html>
+
+<script type = "text/javascript" >  
+    function preventBack()
+    {
+      window.history.forward(); 
+    }  
+    setTimeout("preventBack()", 0); 
+</script> 
+
